@@ -1,0 +1,35 @@
+<div class="pull-right" >
+  <p><a ui-sref="edit-article({ articleId: article.id })">Cancel</a></p>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+
+    <form ng-submit="$ctrl.updateArticle($ctrl.editArticle.id)">
+      <div>
+        <input type="hidden" id="id" class="form-control" ng-model="$ctrl.editArticle.id">
+
+        <label for="title">Title</label>
+        <input id="title" class="form-control" ng-model="$ctrl.editArticle.title">
+      </div>
+      <div>
+        <label for="body">Body</label>
+        <textarea id="body" class="form-control" ng-model="$ctrl.editArticle.body"></textarea>
+      </div>
+      <div>
+        <label for="author">Author</label>
+        <input id="author" class="form-control" ng-model="$ctrl.editArticle.author">
+      </div>
+      <div>
+        <label for="image-url">Image URL</label>
+        <input id="image-url" class="form-control" ng-model="$ctrl.editArticle.image_url">
+      </div><br>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+          Update Post
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

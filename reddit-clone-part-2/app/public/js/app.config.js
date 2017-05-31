@@ -1,6 +1,5 @@
 (function() {
   'use strict';
-
   angular.module('app').config(config)
 
   config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
@@ -15,8 +14,8 @@
       url: '/',
       component: 'articleList', })
     .state({
-      name: 'edit-house',
-      url: '/articles/:articleId',
+      name: 'edit-article',
+      url: '/articles/:articleId/edit',
       component: 'articleEdit', })
   }
 
