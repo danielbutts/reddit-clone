@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node ./app/bin/www"
+    "start": "node ./app/bin/www",
+    "knex": "knex"
   },
   "keywords": [],
   "author": "",
