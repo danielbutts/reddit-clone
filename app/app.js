@@ -1,15 +1,36 @@
-const path = require('path')
-const http = require('http')
 const express = require('express')
-const basePath = path.join(__dirname, '/../')
+const path = require('path')
+const bodyParser = require('body-parser')
+const app = express()
 
-function app(basePath) {
-	const app = express();
-	app.use(express.static(basePath));
-	app.use('/node_modules', express.static(path.join(basePath, 'node_modules')));
-	app.get('*', (_, res) => res.sendFile(path.join(basePath, 'index.html')));
-
-	return app;
+if (process.env.NODE_ENV !== 'test') {
+  const logger = require('morgan')
+  app.use(logger('dev'))
 }
 
-module.exports = app;
+app.use(bodyParser.json())
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '/../', 'node_modules')))
+
+app.use('/api/posts', require('./routes/posts'))
+app.use('/api/posts', require('./routes/comments'))
+
+app.use('*', function(req, res, next) {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')})
+})
+
+app.use(function(req, res, next) {
+  var err = new Error('Not Found')
+  err.status = 404
+  next(err)
+})
+
+app.use(function(err, req, res, next) {
+  res.locals.message = err.message
+  res.locals.error = req.app.get('env') === 'development' ? err : {}
+  console.log(err)
+  res.status(err.status || 500)
+  res.json(err)
+})
+
+module.exports = app

@@ -1,29 +1,11 @@
-# Angular Drill
+# Reddit Clone With Server
 
-Test-driven code challenges to support the Angular Curriculum!
+Create an Angular application that allows users to CRUD data from a server.
 
-## Challenges
+## Setup
 
-**[Simple Interaction](./simple-interaction/README.md)**
+Run `yarn` and `npm start` to see the app locally.
 
-Build a one-component Angular 1 app with some simple interaction
+Run `npm test` to run the tests.
 
-**[List Management](./list-management/README.md)**
-
-Add and remove items from a list
-
-**[HTTP Calls](./http-calls/README.md)**
-
-Build a simple CRUD app with `$http`
-
-**[ui-router fundamentals](./ui-router-fundamentals/README.md)**
-
-Add `ui-router` to a project, and work with `ui-sref` and `$state.go()`
-
-## Misc Project Descriptions
-
-- [Class creator app](./further-practice/class-creator-app.md)
-
-## Reference
-
-Everything in karma-examples is an example of how to write an Angular 1 unit test.
+> Check the "test/screenshots" folder for examples of what each test is looking for.
