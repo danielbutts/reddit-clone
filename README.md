@@ -1,11 +1,20 @@
-# Reddit Clone With Server
+## Reddit Clone
+* * *
 
-Create an Angular application that allows users to CRUD data from a server.
+![screenshot](https://github.com/danielbutts/reddit_clone/blob/master/static/screenshot.png)
 
-## Setup
+### *Goal*
+AngularJS clone of popular article aggregator sites like Reddit. Allows users to post, edit, and delete articles as well as add comments and vote individual articles up or down.
 
-Run `yarn` and `npm start` to see the app locally.
+### *Technologies*
+- HTML/CSS
+- Javascript
+- jQuery
+- Bootstrap
+- NodeJS
+- ExpressJS
+- Handlebars
+- KnexJS
 
-Run `npm test` to run the tests.
-
-> Check the "test/screenshots" folder for examples of what each test is looking for.
+### *Future Development*
+-
